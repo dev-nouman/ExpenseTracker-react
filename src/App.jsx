@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Balance from "./components/Balance";
 import Summary from "./components/Summary";
@@ -8,7 +8,14 @@ import './App.css'
 
 function App() {
 
-  const [transactions, setTransactions] = useState([]);
+  const [transactions, setTransactions] = useState(()=>{
+    const savedTransactions = localStorage.getItem("transactions");
+    return savedTransactions ? JSON.parse(savedTransactions) : [];
+  });
+
+  useEffect(()=>{localStorage.setItem('transactions', JSON.stringify(transactions));
+
+  }, [transactions]);
 
   const addTransaction = (newTrans) => {
     setTransactions([newTrans, ...transactions]);
