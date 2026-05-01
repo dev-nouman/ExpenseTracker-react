@@ -8,6 +8,22 @@
 
 body {
     font-family: Inter;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme (default) */
+body {
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
-}   
+}
+
+html[data-theme="dark"] body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* Light theme */
+html[data-theme="light"] body {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    color: #1f2937;
+}

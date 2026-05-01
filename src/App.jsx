@@ -8,14 +8,28 @@ import './App.css'
 
 function App() {
 
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme : "dark";
+  });
+
   const [transactions, setTransactions] = useState(()=>{
     const savedTransactions = localStorage.getItem("transactions");
     return savedTransactions ? JSON.parse(savedTransactions) : [];
   });
 
-  useEffect(()=>{localStorage.setItem('transactions', JSON.stringify(transactions));
-
+  useEffect(()=>{
+    localStorage.setItem('transactions', JSON.stringify(transactions));
   }, [transactions]);
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const addTransaction = (newTrans) => {
     setTransactions([newTrans, ...transactions]);
@@ -27,7 +41,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header onToggleTheme={toggleTheme} theme={theme} />
       <Balance transactions={transactions} />
       <Summary transactions={transactions} />
       <AddTransaction onAdd={addTransaction} />

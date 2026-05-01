@@ -1,3 +1,43 @@
+:root[data-theme="dark"] {
+  --bg-primary: white;
+  --bg-secondary: rgba(255, 255, 255, 0.05);
+  --text-primary: white;
+  --text-secondary: #aaa;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --input-bg-focus: rgba(255, 255, 255, 0.12);
+  --button-bg: #3b82f6;
+  --button-hover: #2563eb;
+  --focus-shadow: rgba(59, 130, 246, 0.5);
+}
+
+:root[data-theme="light"] {
+  --bg-primary: white;
+  --bg-secondary: rgba(0, 0, 0, 0.05);
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --input-bg: rgba(0, 0, 0, 0.05);
+  --input-bg-focus: rgba(0, 0, 0, 0.08);
+  --button-bg: #3b82f6;
+  --button-hover: #2563eb;
+  --focus-shadow: rgba(59, 130, 246, 0.5);
+}
+
+/* Default to dark */
+:root {
+  --bg-primary: white;
+  --bg-secondary: rgba(255, 255, 255, 0.05);
+  --text-primary: white;
+  --text-secondary: #aaa;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --input-bg-focus: rgba(255, 255, 255, 0.12);
+  --button-bg: #3b82f6;
+  --button-hover: #2563eb;
+  --focus-shadow: rgba(59, 130, 246, 0.5);
+}
+
 .app {
     max-width: 420px;
     margin: auto;
@@ -19,13 +59,44 @@ p {
     margin: auto;
     text-align: center;
     margin-bottom: 10px;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-content h2 {
+    flex: 1;
+    margin: 0;
+}
+
+.theme-toggle {
+    width: auto;
+    padding: 8px 12px;
+    margin-top: 0;
+    font-size: 18px;
+    background: var(--button-bg);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--button-hover);
+    transform: scale(1.1);
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-secondary);
     padding: 15px;
     border-radius: 14px;
     backdrop-filter: blur(12px);
+    color: var(--text-primary);
 }
 
 .card h2 {
@@ -67,18 +138,18 @@ input {
     border-radius: 10px;
     border: none;
     outline: none;
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
+    background: var(--input-bg);
+    color: var(--text-primary);
     font-size: 14px;
 }
 
 input::placeholder {
-    color: #aaa;
+    color: var(--text-secondary);
 }
 
 input:focus {
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+    background: var(--input-bg-focus);
+    box-shadow: 0 0 0 2px var(--focus-shadow);
 }
 
 button {
@@ -87,14 +158,15 @@ button {
     margin-top: 10px;
     border-radius: 10px;
     border: none;
-    background: #3b82f6;
+    background: var(--button-bg);
     color: white;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    background: #2563eb;
+    background: var(--button-hover);
     transform: translateY(-1px);
 }
 
