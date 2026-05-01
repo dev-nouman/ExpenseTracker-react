@@ -3,7 +3,7 @@ import TransactionItem from './TransactionItem'
 
 const TransactionList = ({ transactions, onDelete }) => {
   return (
-    <div className='card'>
+    <div className='card h-250'>
       <p className='small'>Transactions</p>
       <div className="list">
         {transactions.map((transaction) => (

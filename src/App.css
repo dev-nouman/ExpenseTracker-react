@@ -104,6 +104,9 @@ button:active {
 
 .list {
     margin-top: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
 .item {
@@ -140,6 +143,15 @@ button:active {
 }
 
 
+.add-transaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+
 /* media queries */
 
 
@@ -152,6 +164,23 @@ button:active {
         align-items: start;
         transition: all 0.3s ease;
         min-height: 100vh;
+    }
+    
+
+    .h-250 {
+        min-height: 250px;
+    }
+
+    .box {
+        padding: 30px 15px;
+    }
+
+    .box p {
+        font-size: 20px;
+    }
+
+    .box h3 {
+        font-size: 24px;
     }
 
     .list {

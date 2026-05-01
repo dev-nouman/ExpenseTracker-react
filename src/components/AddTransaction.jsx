@@ -22,8 +22,8 @@ const AddTransaction = ({ onAdd }) => {
   }
 
   return (
-    <form className='card' onSubmit={submitForm}>
-      <p className='small'>Your Transactions</p>
+    <form className='card h-250 add-transaction' onSubmit={submitForm}>
+      <p className='small'>Add Transaction</p>
       <input type="text" placeholder='Enter title' value={text} onChange={(e) => setText(e.target.value)} />
       <input type="number" placeholder='Amount(+/-)' value={amount} onChange={(e) => setAmount(e.target.value)} />
       <button>Add</button>
