@@ -261,7 +261,7 @@ select option {
         gap: 20px;
         align-items: start;
         transition: all 0.3s ease;
-        min-height: 100vh;
+        min-height: 40vh;
     }
 
 
