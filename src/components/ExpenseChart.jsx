@@ -9,16 +9,14 @@ const ExpenseChart = ({ transactions }) => {
   const expenseTransactions = transactions.filter(t => t.amount < 0);
 
   const categoryTotals = expenseTransactions.reduce((acc, curr) => {
-    // 1. Get the raw category string and trim spaces
+
     const rawCategory = curr.category ? curr.category.trim() : 'Other';
 
-    // 2. Find the matching key in CATEGORY_COLORS regardless of uppercase/lowercase
     const matchedCategory = Object.keys(CATEGORY_COLORS).find(
       (key) => key.toLowerCase() === rawCategory.toLowerCase()
     ) || 'Other';
 
-    // 3. Add to the total using the perfectly matched key
-    acc[matchedCategory] = (acc[matchedCategory] || 0) + Math.abs(curr.amount);
+   acc[matchedCategory] = (acc[matchedCategory] || 0) + Math.abs(curr.amount);
     return acc;
   }, {});
 
