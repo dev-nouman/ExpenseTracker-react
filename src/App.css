@@ -250,6 +250,45 @@ select option {
     display: inline-block;
 }
 
+ .h3 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+/* Category Filter Dropdown */
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.filter-header .small {
+    margin: 0;
+}
+
+.category-filter {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.category-filter:hover {
+    background-color: var(--input-bg-focus);
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    margin: 20px 0;
+}
+
 /* media queries */
 
 
@@ -264,9 +303,22 @@ select option {
         min-height: 40vh;
     }
 
+    .chart-container {
+        display: block;
+        height: 300px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .chart-wrapper {
+        padding: 20px;
+        grid-column: span 2;
+
+    }
 
     .h-250 {
-        min-height: 300px;
+        min-height: 350px;
     }
 
     .box {
@@ -282,7 +334,8 @@ select option {
     }
 
     .list {
-        max-height: 250px;
+        max-height: 280px;
+        border-radius: 12px;
         overflow-y: auto;
         padding-right: 5px;
     }

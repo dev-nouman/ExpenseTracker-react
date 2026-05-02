@@ -5,6 +5,7 @@ import Summary from "./components/Summary";
 import AddTransaction from "./components/AddTransaction";
 import TransactionList from "./components/TransactionList";
 import './App.css'
+import ExpenseChart from "./components/ExpenseChart";
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
       <Header onToggleTheme={toggleTheme} theme={theme} />
       <Balance transactions={transactions} />
       <Summary transactions={transactions} />
+      <ExpenseChart transactions={transactions} />
       <AddTransaction onAdd={addTransaction} />
       <TransactionList transactions={transactions} onDelete={deleteTransaction}  />
     </div>

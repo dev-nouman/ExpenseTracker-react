@@ -4,7 +4,7 @@ const AddTransaction = ({ onAdd }) => {
 
   const [text, setText] = useState('')
   const [amount, setAmount] = useState('')
-  const [category, setCategory] = useState('food')
+  const [category, setCategory] = useState('Food')
 
 
   const submitForm = (e) => {
@@ -21,7 +21,7 @@ const AddTransaction = ({ onAdd }) => {
     onAdd(newTransaction);
     setText('');
     setAmount('');
-    setCategory('');
+    setCategory('Food');
   }
 
   return (
